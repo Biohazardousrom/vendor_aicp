@@ -165,3 +165,8 @@ PRODUCT_COPY_FILES += \
     vendor/aicp/prebuilt/common/lib64/libsketchology_native.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libsketchology_native.so
 
 -include vendor/aicp/config/partner_gms.mk
+
+ifeq ($(WITH_GAPPS), true)
+# Gapps
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
